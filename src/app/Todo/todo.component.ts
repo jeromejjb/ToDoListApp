@@ -32,10 +32,12 @@ title="todoList"
   
 }
 
-completeTask(taskIndex: number): void{
-  console.log(taskIndex);
-  this.todoList[taskIndex].completed=true;
+
+completeTask(i: number) {
+  this.todoList[i].completed = true;
+
 }
+
 
 constructor() { }
 

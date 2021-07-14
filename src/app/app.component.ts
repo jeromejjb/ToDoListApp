@@ -55,8 +55,8 @@ swapiCall(id: number){
   
 }
 
-completeTask(todoList: Todo) {
-  todoList.completed = true;
+completeTask(i: number) {
+  this.todoList[i].completed = true;
 }
 
 removeItem(index : number){

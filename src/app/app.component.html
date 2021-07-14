@@ -13,28 +13,3 @@
         <br>
          <input type="submit" value="Add"/>
     </form>
-
-
-    <button (click)="testLogger()">Test Logger</button>
-        <br>
-   <!-- <button (click)="swapiCall()">Call Api</button> -->
-  <!-- <form #searchForm="ngForm" (ngSubmit)=swapiCall"searchForm.form.value.id">-->
-       <label> Search Swapi People by Id</label>
-       <input type="number" name="id" />
-       <input type="submit" value="Search"/>
-   </form>
-        <div *ngIf="person!==null">
-            <p>Name: {{person.name}}</p>
-            <p>Home World Link: {{person.homeworld}}</p>
-            <P>Height: {{person.height}}</P>
-            <p>Films:</p>
-            <ul>
-                <li *ngFor="let film of person.films">
-                    {{film}}
-
-                </li>
-            </ul>
-            
-        </div>
-
-    
