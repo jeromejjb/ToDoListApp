@@ -1,25 +1,21 @@
-<div class="center">
+<div >
     <div *ngFor="let todo of todoList; index as i" >
        <tr>
         <td>{{i + 1}}</td>
-        <button >
+        
+        <button>
             Complete
         </button>
-    <td> {{todo.task}}<td>
+        <td> {{todo.task}}
     </td>
     <td>{{todo.completed}}</td>
 </tr>
 </div>
 
     <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
-        <input type="text" id="task" name="task" placeholder="Do Awesome Sh*t" ngModel />
+        <input type="text" id="task" name="task" placeholder="Do Awesome Stuff" ngModel />
         <br>
          <input type="submit" value="Add Task"/>
     </form>
-
-
-<br>
-<br>
-
 </div>
 
