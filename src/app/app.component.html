@@ -2,6 +2,39 @@
 <p>A place to store todos</p>
 <h2>Filter your to-dos</h2>
 
+<div *ngFor="let todo of todoList; index as i" >
+    <li>
+     <td>{{i + 1}}: <button *ngIf="!todo.completed" (click)="completeTask(i)"> Complete </button>{{todo.completed}}: {{todo.task}} </td>
+    </li>
+    </div>
 
-<app-todo completed="false" task="Make coffee"> </app-todo> 
+    <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
+        <input type="text" id="task" name="task" placeholder="Do Awesome Stuff" ngModel />
+        <br>
+         <input type="submit" value="Add"/>
+    </form>
 
+
+    <button (click)="testLogger()">Test Logger</button>
+        <br>
+   <!-- <button (click)="swapiCall()">Call Api</button> -->
+  <!-- <form #searchForm="ngForm" (ngSubmit)=swapiCall"searchForm.form.value.id">-->
+       <label> Search Swapi People by Id</label>
+       <input type="number" name="id" />
+       <input type="submit" value="Search"/>
+   </form>
+        <div *ngIf="person!==null">
+            <p>Name: {{person.name}}</p>
+            <p>Home World Link: {{person.homeworld}}</p>
+            <P>Height: {{person.height}}</P>
+            <p>Films:</p>
+            <ul>
+                <li *ngFor="let film of person.films">
+                    {{film}}
+
+                </li>
+            </ul>
+            
+        </div>
+
+    

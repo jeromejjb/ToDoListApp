@@ -11,7 +11,7 @@ import { isNgTemplate } from '@angular/compiler';
 })
 export class TodoComponent implements OnInit {
 
-
+title="todoList"
   todoList: Todo[] = [
   {completed: true, task: "Make Coffee"},
   {completed: false, task: "Take a cold shower"},
@@ -32,8 +32,9 @@ export class TodoComponent implements OnInit {
   
 }
 
-completeTask(todoList: Todo) {
-  todoList.completed = true;
+completeTask(taskIndex: number): void{
+  console.log(taskIndex);
+  this.todoList[taskIndex].completed=true;
 }
 
 constructor() { }
