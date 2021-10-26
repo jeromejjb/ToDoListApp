@@ -1,15 +1,5 @@
-<h1>TODO List</h1>
-<p>A place to store todos</p>
-<h2>Filter your to-dos</h2>
-
-<div *ngFor="let todo of todoList; index as i" >
-    <li>
-     <td>{{i + 1}}: <button *ngIf="!todo.completed" (click)="completeTask(i)"> Complete </button>{{todo.completed}}: {{todo.task}} </td>
-    </li>
-    </div>
-
-    <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
-        <input type="text" id="task" name="task" placeholder="Do Awesome Stuff" ngModel />
-        <br>
-         <input type="submit" value="Add"/>
-    </form>
+<body>
+    <h2>ToDo app</h2>
+    
+    <app-to-do-list></app-to-do-list>
+</body>

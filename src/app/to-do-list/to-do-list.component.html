@@ -1,0 +1,30 @@
+<body>
+    <!-- ngFor with iterating through list of tasks goes here-->
+    <table>
+        <tr>
+            <th></th>
+            <th>Task</th>
+            <th>Status</th>
+        </tr>
+        <tr *ngFor="let item of items; index as i" [ngStyle]="{'text-decoration':item.completed === true ? 'line-through' : 'none'}">
+            <td>{{i + 1}}</td>
+            <td >{{item.task}} 
+                <button *ngIf="item.completed===false" (click)="completeTask(item)">
+                    Complete
+                </button>
+            </td>
+            <td>{{item.completed}}</td>
+            <td>
+                <button (click)="deleteTask(i)">
+                    X
+                </button>
+            </td>
+        </tr>
+        
+    </table>
+    
+    <form #addTaskForm="ngForm" (ngSubmit)="addTask(addTaskForm)">
+        <input type="text" id="task" name="task" placeholder="new task" ngModel />
+        <input type="submit" value="Add task" />
+    </form>
+    </body>
